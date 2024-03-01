@@ -160,12 +160,14 @@ class BServer:
                 print(gettext.translation('boxes.py', localedir='locale', languages=[lang]))
                 return gettext.translation('boxes.py', localedir='locale', languages=[lang])
             except OSError:
+                print("yczzezezezezezezezezezezef")
                 pass
             try:
                 print(gettext.translation('boxes.py', languages=[lang]))
                 print("ycf")
                 return gettext.translation('boxes.py', languages=[lang])
             except OSError:
+                print("ychuhuhuhuhuhuhuhuhuhuf")
                 pass
 
         # selected language not found try browser default
