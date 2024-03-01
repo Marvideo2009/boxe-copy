@@ -587,6 +587,7 @@ class BServer:
             environ["PATH_INFO"] = "/static/favicon.ico"
         if environ["PATH_INFO"].startswith("/static/"):
             return self.serveStatic(environ, start_response)
+        print(environ["PATH_INFO"])
 
         status = '200 OK'
         headers = [('Content-type', 'text/html; charset=utf-8'), ('X-XSS-Protection', '1; mode=block'), ('X-Content-Type-Options', 'nosniff'), ('x-frame-options', 'SAMEORIGIN'), ('Referrer-Policy', 'no-referrer')]
@@ -609,7 +610,6 @@ class BServer:
             start_response(status, headers)
 
             lang_name = lang.info().get('language', None)
-            print(lang_name)
             if lang_name not in self._cache:
                 self._cache[lang_name] = list(self.genPageMenu(lang))
             return self._cache[lang_name]
