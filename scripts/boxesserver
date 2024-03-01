@@ -146,7 +146,7 @@ class BServer:
         return self._languages
 
     def getLanguage(self, args, accept_language):
-        lang = None
+        lang = "fr"
         langs = []
 
         for i, arg in enumerate(args):
