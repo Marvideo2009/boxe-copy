@@ -143,7 +143,6 @@ class BServer:
             files = glob.glob(os.path.join(localedir, '*', 'LC_MESSAGES', '%s.mo' % domain))
             self._languages.extend([file.split(os.path.sep)[-3] for file in files])
         self._languages.sort()
-        print(self._languages)
         return self._languages
 
     def getLanguage(self, args, accept_language):
@@ -153,6 +152,7 @@ class BServer:
         for i, arg in enumerate(args):
             if arg.startswith("language="):
                 lang = arg[len("language="):]
+                print(lang)
                 del args[i]
                 break
         if lang:
