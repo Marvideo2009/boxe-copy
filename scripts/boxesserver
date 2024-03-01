@@ -385,7 +385,6 @@ class BServer:
     def genHTMLMetaLanguageLink(self) -> str:
         """Generates meta language list for search engines."""
         languages = self.getLanguages()
-        print(languages)
 
         s = ""
         for language in languages:
@@ -402,6 +401,7 @@ class BServer:
         """Generates a dropdown selection for the language change."""
         current_language = lang.info().get('language', '')
         languages = self.getLanguages()
+        print(languages)
 
         if len(languages) < 2:
             return "<!-- No other languages to select found. -->"
