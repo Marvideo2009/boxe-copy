@@ -157,10 +157,13 @@ class BServer:
         print(lang)
         if lang:
             try:
+                print(gettext.translation('boxes.py', localedir='locale', languages=[lang]))
                 return gettext.translation('boxes.py', localedir='locale', languages=[lang])
             except OSError:
                 pass
             try:
+                print(gettext.translation('boxes.py', languages=[lang]))
+                print("ycf")
                 return gettext.translation('boxes.py', languages=[lang])
             except OSError:
                 pass
