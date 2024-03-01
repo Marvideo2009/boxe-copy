@@ -139,8 +139,9 @@ class BServer:
             return self._languages
         self._languages = []
         domain = "boxes.py"
+        abs_local = os.path.abspath("../")
         for localedir in ["locale", gettext._default_localedir]:
-            files = glob.glob(os.path.join(localedir, '*', 'LC_MESSAGES', '%s.mo' % domain))
+            files = glob.glob(os.path.join(abs_local, localedir, '*', 'LC_MESSAGES', '%s.mo' % domain))
             self._languages.extend([file.split(os.path.sep)[-3] for file in files])
         self._languages.sort()
         return self._languages
