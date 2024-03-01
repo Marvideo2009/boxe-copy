@@ -142,7 +142,6 @@ class BServer:
         abs_local = os.path.abspath("boxe-copy")
         for localedir in ["locale", gettext._default_localedir]:
             files = glob.glob(os.path.join(abs_local, localedir, '*', 'LC_MESSAGES', '%s.mo' % domain))
-            print(os.path.join(abs_local, localedir, '*', 'LC_MESSAGES', '%s.mo' % domain))
             self._languages.extend([file.split(os.path.sep)[-3] for file in files])
         self._languages.sort()
         return self._languages
@@ -158,7 +157,7 @@ class BServer:
                 break
         if lang:
             try:
-                return gettext.translation('boxes.py', localedir='locale', languages=[lang])
+                return gettext.translation('boxes.py', localedir='boxe-copy/locale', languages=[lang])
             except OSError:
                 pass
             try:
