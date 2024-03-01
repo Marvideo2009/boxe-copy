@@ -695,7 +695,7 @@ def main() -> None:
     fc.start()
 
     httpd = make_server(args.host, args.port, boxserver.serve)
-    print(f"BoxesServer as démarré : {args.host}:{args.port}")
+    print(f"BoxesServer as démarré : http://{args.host}:{args.port}")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
