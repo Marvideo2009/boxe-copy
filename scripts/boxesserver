@@ -152,7 +152,6 @@ class BServer:
         for i, arg in enumerate(args):
             if arg.startswith("language="):
                 lang = arg[len("language="):]
-                print(lang)
                 del args[i]
                 break
         if lang:
@@ -167,6 +166,7 @@ class BServer:
 
         # selected language not found try browser default
         languages = accept_language.split(",")
+        print(languages)
         for l in languages:
             m = self.lang_re.match(l.strip())
             if m:
