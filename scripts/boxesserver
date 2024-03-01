@@ -599,8 +599,7 @@ class BServer:
                 render = arg[len("render="):]
 
         lang = self.getLanguage(args, environ.get("HTTP_ACCEPT_LANGUAGE", ""))
-        print(environ.get("HTTP_ACCEPT_LANGUAGE", ""))
-        print(args)
+        print(lang)
         _ = lang.gettext
 
         if not name or name == "Gallery":
