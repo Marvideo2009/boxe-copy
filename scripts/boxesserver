@@ -154,6 +154,7 @@ class BServer:
                 lang = arg[len("language="):]
                 del args[i]
                 break
+        print(lang)
         if lang:
             try:
                 return gettext.translation('boxes.py', localedir='locale', languages=[lang])
@@ -598,8 +599,6 @@ class BServer:
                 render = arg[len("render="):]
 
         lang = self.getLanguage(args, environ.get("HTTP_ACCEPT_LANGUAGE", ""))
-        print(args)
-        print(environ.get("HTTP_ACCEPT_LANGUAGE", ""))
         _ = lang.gettext
 
         if not name or name == "Gallery":
