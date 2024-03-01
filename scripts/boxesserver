@@ -145,7 +145,6 @@ class BServer:
             print(os.path.join(abs_local, localedir, '*', 'LC_MESSAGES', '%s.mo' % domain))
             self._languages.extend([file.split(os.path.sep)[-3] for file in files])
         self._languages.sort()
-        print(self._languages)
         return self._languages
 
     def getLanguage(self, args, accept_language):
@@ -386,6 +385,7 @@ class BServer:
     def genHTMLMetaLanguageLink(self) -> str:
         """Generates meta language list for search engines."""
         languages = self.getLanguages()
+        print(languages)
 
         s = ""
         for language in languages:
