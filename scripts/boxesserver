@@ -141,6 +141,7 @@ class BServer:
         domain = "boxes.py"
         for localedir in ["locale", gettext._default_localedir]:
             files = glob.glob(os.path.join(localedir, '*', 'LC_MESSAGES', '%s.mo' % domain))
+            print(files)
             self._languages.extend([file.split(os.path.sep)[-3] for file in files])
         self._languages.sort()
         return self._languages
@@ -157,8 +158,8 @@ class BServer:
         print(lang)
         if lang:
             try:
-                print(gettext.translation('boxes.py', localedir='locale', languages=lang))
-                return gettext.translation('boxes.py', localedir='locale', languages=lang)
+                print(gettext.translation('boxes.py', localedir='locale', languages=[lang]))
+                return gettext.translation('boxes.py', localedir='locale', languages=[lang])
             except OSError:
                 print("yczzezezezezezezezezezezef")
                 pass
