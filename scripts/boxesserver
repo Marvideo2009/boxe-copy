@@ -173,10 +173,9 @@ class BServer:
 
         langs.sort(reverse=True)
         langs = [l[1].replace("-", "_") for l in langs]
-        print(langs)
 
         try:
-            return gettext.translation('boxes.py', localedir='locale', languages=langs)
+            return gettext.translation('boxes.py', localedir='locale', languages="fr")
         except OSError:
             return gettext.translation('boxes.py', languages=langs, fallback=True)
 
