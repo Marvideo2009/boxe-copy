@@ -401,7 +401,6 @@ class BServer:
         """Generates a dropdown selection for the language change."""
         current_language = lang.info().get('language', '')
         languages = self.getLanguages()
-        print(languages)
 
         if len(languages) < 2:
             return "<!-- No other languages to select found. -->"
